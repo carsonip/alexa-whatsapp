@@ -13,8 +13,10 @@ class EchoLayer(YowInterfaceLayer):
         # if True:
         receipt = OutgoingReceiptProtocolEntity(messageProtocolEntity.getId(), messageProtocolEntity.getFrom(), 'read', messageProtocolEntity.getParticipant())
 
-        store.unread_msg[messageProtocolEntity.getFrom()] = []
-        store.unread_msg[messageProtocolEntity.getFrom()].append(messageProtocolEntity.getBody())
+        from_person = messageProtocolEntity.getFrom()
+        if store.unread_msg.get(from_person) is None:
+            store.unread_msg[from_person] = []
+        store.unread_msg[from_person].append(messageProtocolEntity.getBody())
 
         self.toLower(receipt)
 
