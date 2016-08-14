@@ -44,6 +44,13 @@ def message_post():
     yowsup_stack.send(outgoingMessageProtocolEntity)
     return jsonify({})
 
+
+@app.route("/message", methods=['DELETE'])
+def message_post():
+    store.unread_msg = {}
+    return jsonify({})
+
+
 def flaskThread(stack):
     global yowsup_stack
     yowsup_stack = stack
