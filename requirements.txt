@@ -1,0 +1,2 @@
+git+git://github.com/schoerg/yowsup@master
+flask==0.11.1
