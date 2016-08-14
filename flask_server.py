@@ -31,4 +31,9 @@ def message_post():
 def flaskThread(stack):
     global yowsup_stack
     yowsup_stack = stack
-    app.run(debug=True, use_reloader=False, port=os.environ.get('PORT'))
+
+    port = os.environ.get('PORT')
+    if port is not None:
+        port = int(port)
+
+    app.run(debug=True, use_reloader=False, host='0.0.0.0', port=port)
