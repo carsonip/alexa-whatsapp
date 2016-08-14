@@ -16,8 +16,8 @@ except:
     CREDENTIALS = (os.environ.get('WHATSAPP_NUM'), os.environ.get('WHATSAPP_PWD'))
 
 #Uncomment to log
-#import logging
-#logging.basicConfig(level=logging.DEBUG)
+import logging
+logging.basicConfig(level=logging.DEBUG)
 
 
 if __name__==  "__main__":
