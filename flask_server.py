@@ -46,7 +46,7 @@ def message_post():
 
 
 @app.route("/message", methods=['DELETE'])
-def message_post():
+def message_delete():
     store.unread_msg = {}
     return jsonify({})
 
